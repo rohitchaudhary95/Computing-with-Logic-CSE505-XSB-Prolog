@@ -2,8 +2,14 @@
 :- table sp(_,_,po('<'/2)).
 
 sp(X,Y,1):- 
-	edge(X,Y).
+	nwedge(X,Y).
 sp(X,Z,N):- 
 	sp(X,Y,N1),
-	edge(Y,Z),
+	nwedge(Y,Z),
 	N is N1 + 1.
+
+nwedge(1,2).
+nwedge(2,3).
+nwedge(1,4).
+nwedge(3,4).
+nwedge(4,5).
